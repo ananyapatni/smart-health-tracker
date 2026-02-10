@@ -8,19 +8,7 @@ This project combines statistical analysis and machine learning to enable data-i
     3. Run the notebook to see the full analysis pipeline.
 
 ## Dataset Description:
-The data used has 11 columns, named in order, 
-
-                                Age
-                                Gender
-                                Daily Steps
-                                Resting Heart Rate
-                                Active Heart Rate
-                                Hours of Sleep
-                                Daily Calorie Intake
-                                Stress Level (0-10 scale)
-                                Sleep Quality (0-100 score)
-                                Daily Activity Type (categorical: sedentary, moderate, intense)
-                                Mood (multiclass: sad, neutral, happy)
+The data used has 11 columns, named in order, Age, Gender, Daily Steps, Resting Heart Rate, Active Heart Rate, Hours of Sleep, Daily Calorie Intake, Stress Level (0-10 scale), Sleep Quality (0-100 score), Daily Activity Type (categorical: sedentary, moderate, intense), and Mood (multiclass: sad, neutral, happy).
 
 
 ## Analysis Pipeline
@@ -51,9 +39,9 @@ To move beyond simple correlation, I used Ordinary Least Squares (OLS) to test a
 
 I challenged three architectures to predict if a user is "Ill Rested" (7+ hours of sleep):
 
-                            Model 1 used Logistic Regression with a	Linear Boundary. It showed a 50.4% result, which proves that health data is too non-linear for basic regression.
-                            Model 2 used a Single Layer Perceptron (PyTorch). The output was 51.1% with high recall, but lacked "nuance" in prediction.
-                            Finally Model 3 was a Deep Neural Network with	Multi-Layer ReLU	that performed with a 51.5% result, and could pick up subtle Stress/HR interactions.
+     Model 1 used Logistic Regression with a	Linear Boundary. It showed a 50.4% result, which proves that health data is too non-linear for basic regression.
+     Model 2 used a Single Layer Perceptron (PyTorch). The output was 51.1% with high recall, but lacked "nuance" in prediction.
+     Finally Model 3 was a Deep Neural Network with	Multi-Layer ReLU	that performed with a 51.5% result, and could pick up subtle Stress/HR interactions.
                             
 To understand the phenomena better, I used SVM + PCA which helped visualize the decision boundaries, proving that health "states" (Rested vs. Tired) often overlap in a high-dimensional space.
 
